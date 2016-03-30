@@ -35,4 +35,4 @@ To install this gem onto your local machine, run `bundle exec rake install`. To 
 
 ## Running Unit Tests
 
-cd into the gem's folder and run 'bundle exec rspec'
+after cloning this repo, cd into the gem's folder and run 'bundle exec rspec'
