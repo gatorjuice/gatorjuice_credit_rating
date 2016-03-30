@@ -3,6 +3,8 @@ require "unirest"
 
 module GatorjuiceCreditRating
   class Assessment
+    attr_reader :propensity, :ranking
+
     def initialize(input_hash)
       @propensity = input_hash["propensity"].to_f
       @ranking = input_hash["ranking"]
@@ -14,7 +16,7 @@ module GatorjuiceCreditRating
         # assuming this was the actual endpoint, I'd get this response back
         response = {
           "propensity" => rand.round(5),
-          "ranking" => %w{A B C D E F}.sample
+          "ranking" => %w(A B C D E F).sample
         }
         assessment = Assessment.new(response)
         return assessment
