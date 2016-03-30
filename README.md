@@ -20,9 +20,13 @@ Or install it yourself as:
     $ gem install gatorjuice_credit_rating
 
 ## Usage
-
+```ruby
 inquiry = GatorjuiceCreditRating::Assessment.inquiry(age: 40, income: 25000, zipcode: 60626)
 
+inquiry.propensity => 0.23445
+
+inquiry.ranking => "B"
+```
 ## Development
 
 After checking out the repo, run `bin/setup` to install dependencies. Then, run `bin/console` for an interactive prompt that will allow you to experiment.
