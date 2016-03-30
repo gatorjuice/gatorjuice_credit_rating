@@ -11,7 +11,7 @@ Gem::Specification.new do |spec|
 
   spec.summary       = %q{fake credit ranking}
   spec.description   = %q{gives a fake credit ranking.}
-  spec.homepage      = "https://github.com/gatorjuice/chicago_crime_data"
+  spec.homepage      = "https://github.com/gatorjuice/gatorjuice_credit_rating"
 
   # Prevent pushing this gem to RubyGems.org by setting 'allowed_push_host', or
   # delete this section to allow pushing this gem to any host.
