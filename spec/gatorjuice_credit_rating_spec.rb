@@ -5,12 +5,6 @@ describe GatorjuiceCreditRating do
     expect(GatorjuiceCreditRating::VERSION).not_to be nil
   end
 
-  # it 'has a frozen version number' do
-  #   version = GatorjuiceCreditRating::VERSION
-  #   GatorjuiceCreditRating::VERSION = "0.0.0"
-  #   expect(version).to eq(GatorjuiceCreditRating::VERSION)
-  # end
-
   describe GatorjuiceCreditRating::Assessment do
     describe '#self.inquiry' do
       it 'returns a ruby Assessment Object' do
