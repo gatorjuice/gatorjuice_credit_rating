@@ -11,8 +11,10 @@ describe GatorjuiceCreditRating do
         expect(GatorjuiceCreditRating::Assessment.inquiry(income: 50000, zipcode: 60625, age: 35)).to be_a GatorjuiceCreditRating::Assessment
       end
 
-      it 'alerts the user if params were insufficient' do
-        expect(GatorjuiceCreditRating::Assessment.inquiry(income: 50000)).to include("invalid inquiry")
+      it 'raises argument error if parameters are insuffient' do
+        expect {
+          GatorjuiceCreditRating::Assessment.inquiry(income: 50000)
+        }.to raise_error(ArgumentError)
       end
 
       it 'expects a propensity between 0 and 1' do
