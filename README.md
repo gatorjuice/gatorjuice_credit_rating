@@ -20,6 +20,8 @@ Or install it yourself as:
     $ gem install gatorjuice_credit_rating
 
 ## Usage
+Make sure you setup an environment variable called API_TOKEN with your unique token.
+
 ```ruby
 inquiry = GatorjuiceCreditRating::Assessment.inquiry(age: 40, income: 25000, zipcode: 60626)
 
