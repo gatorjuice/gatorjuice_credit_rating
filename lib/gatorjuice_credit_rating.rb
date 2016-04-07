@@ -11,8 +11,18 @@ module GatorjuiceCreditRating
     end
 
     def self.inquiry(input_options)
-      if input_options[:age] && input_options[:income] && input_options[:zipcode] && input_options.class == Hash
-        response = Unirest.post(
+      if 
+        input_options[:age] && 
+        input_options[:age].to_i >= 18 && 
+        !!Integer(input_options[:age]) && 
+        input_options[:income] && 
+        input_options[:income].to_i > 0 && 
+        !!Integer(input_options[:income]) &&
+        input_options[:zipcode] && 
+        input_options[:zipcode].to_s.length == 5 && 
+        !!Integer(input_options[:zipcode]) && 
+        input_options.class == Hash
+        response = Unirest.get(
           "https://pacific-stream-61271.herokuapp.com/api/v1/inquiries",
           headers: {
             "Accept" => "application/json"
@@ -24,14 +34,9 @@ module GatorjuiceCreditRating
             api_token: "ABCDEFG1234567" # ENV[API_TOKEN]
           }
         ).body 
-        if !response["response"]
-          @assessment = Assessment.new(response)
-          return @assessment
-        else
-          return response["response"]
-        end
+        response["response"] ? response["response"] : Assessment.new(response)
       else
-        raise ArgumentError, "#inquiry takes one hash as an argument and must have keys and values for: age, income, zipcode"
+        raise ArgumentError, "#inquiry takes one hash as an argument and must have keys and numeric values for: age, income, zipcode"
       end
     end
   end

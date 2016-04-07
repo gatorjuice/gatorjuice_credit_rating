@@ -9,8 +9,8 @@ Gem::Specification.new do |spec|
   spec.authors       = ["Jamie"]
   spec.email         = ["gatorjuice@gmail.com"]
 
-  spec.summary       = %q{fake credit ranking}
-  spec.description   = %q{gives a fake credit ranking.}
+  spec.summary       = "fake credit ranking"
+  spec.description   = "gives a fake credit ranking"
   spec.homepage      = "https://github.com/gatorjuice/gatorjuice_credit_rating"
 
   spec.files         = `git ls-files -z`.split("\x0").reject { |f| f.match(%r{^(test|spec|features)/}) }
@@ -19,7 +19,7 @@ Gem::Specification.new do |spec|
   spec.require_paths = ["lib"]
 
   # specifying which ruby version 
-  spec.required_ruby_version = '~> 2.2.0'
+  spec.required_ruby_version = '2.2.0'
 
   spec.add_development_dependency "bundler", "~> 1.9"
   spec.add_development_dependency "rake", "~> 10.0"
