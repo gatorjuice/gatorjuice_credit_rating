@@ -2,6 +2,9 @@
 
 Finally! A tool for entering three pieces of information and getting arbitrary data back in order to make incredibly important decisions
 
+## Ruby Requirements
+
+This gem requires ruby version 2.2.0
 
 ## Installation
 
